@@ -1,0 +1,25 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+dist
+# Dependency directories
+node_modules/
+jspm_packages/
+# Optional npm cache directory
+.npm
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.idea
+.DS_Store
