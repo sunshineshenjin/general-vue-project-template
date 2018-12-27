@@ -1,5 +1,5 @@
 import { login, logout } from '@/api/user'
-import { setToken, getToken, setUserName, getUserName, getAccess, setAccess, removeAllCookies, removeAllLocalStorage } from '@/libs/util'
+import { setToken, getToken, setUserName, getUserName, getAccess, setAccess, removeAllCookies, removeAllLocalStorage } from '@/libs/localStorage'
 
 export default {
   state: {

@@ -37,6 +37,26 @@ export default [
     ]
   },
   {
+    path: '/product',
+    name: 'product',
+    meta: {
+      icon: 'ios-card',
+      title: 'product'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'list',
+        name: 'product_list',
+        meta: {
+          icon: 'md-basketball',
+          notCache: true
+        },
+        component: () => import('@/view/product/product.vue')
+      }
+    ]
+  },
+  {
     path: '/401',
     name: 'error_401',
     component: () => import('@/view/error-page/401.vue')

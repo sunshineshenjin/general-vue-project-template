@@ -1,4 +1,4 @@
-import {getAccess} from '@/libs/util'
+import { getAccess } from '@/libs/localStorage'
 export const hasPermission = {
   bind: function (el, binding, vnode) {
     let btnPermission = binding.value

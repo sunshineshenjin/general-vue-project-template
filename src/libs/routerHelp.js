@@ -1,6 +1,6 @@
 import permissionRouter from '../router/permission-routers'
-import {deepCopyRoutes} from '@/utils/assist'
-import {getAccess} from '@/libs/util'
+import { deepCopyRoutes } from '@/utils/assist'
+import { getAccess } from '@/libs/localStorage'
 
 export const hasMenuAccess = (menuAccess, userAccess) => {
   if (!menuAccess || !Array.isArray(menuAccess)) {

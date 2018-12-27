@@ -16,6 +16,7 @@ router.options.routes = showRouter.concat(router.options.routes)
 const LOGIN_PAGE_NAME = 'login'
 router.beforeEach((to, from, next) => {
   iView.LoadingBar.start()
+  // 正在开发应该打开此行注释，获取真实的token
   // const token = getToken()
   const token = 'sdsdsd'
   if (!token && to.name !== LOGIN_PAGE_NAME) {

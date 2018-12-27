@@ -18,7 +18,7 @@
 <script>
 import LoginForm from '_c/login-form'
 import { mapActions } from 'vuex'
-import {filterRoutersByAccess} from '@/libs/routerHelp'
+import { filterRoutersByAccess } from '@/libs/routerHelp'
 import router from './../../router/index'
 
 export default {

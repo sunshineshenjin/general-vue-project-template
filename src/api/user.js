@@ -1,4 +1,4 @@
-import httpApi from './../config/httpApi'
+import httpApi from './../libs/httpRequestUtil'
 
 export const login = ({ userName, password }) => {
   const data = {

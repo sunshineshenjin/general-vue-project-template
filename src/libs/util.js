@@ -1,82 +1,4 @@
-import Cookies from 'js-cookie'
-// cookie保存的天数
-import config from '@/config'
 import { forEach, hasOneOf } from '@/libs/tools'
-export const TOKEN_KEY = 'token'
-export const USER_NAME = 'user_name'
-export const ACCESS = 'access'
-
-export const removeAllCookies = () => {
-  clearGoPath()
-  Cookies.remove(TOKEN_KEY)
-  deleteAccess()
-  Cookies.remove(USER_NAME)
-}
-
-export const removeAllLocalStorage = () => {
-  localStorage.clear()
-}
-
-export const setGoPath = (goPath) => {
-  Cookies.set('GO_PATH', goPath)
-}
-export const getGoPath = () => {
-  const goPath = Cookies.get('GO_PATH')
-  if (goPath) return goPath
-  else return ''
-}
-export const clearGoPath = () => {
-  Cookies.remove('GO_PATH')
-}
-
-export const setToken = (token) => {
-  Cookies.set(TOKEN_KEY, token, {expires: config.cookieExpires || 1})
-}
-export const getToken = () => {
-  const token = Cookies.get(TOKEN_KEY)
-  if (token) return token
-  else return false
-}
-export const setAccess = (access) => {
-  Cookies.set(ACCESS, JSON.stringify(access), {expires: config.cookieExpires || 1})
-}
-export const getAccess = () => {
-  const access = Cookies.get(ACCESS)
-  if (access) {
-    let cookieAccess = JSON.parse(access)
-    if (Array.isArray(cookieAccess)) {
-      return cookieAccess
-    } else {
-      deleteAccess()
-      return ['test']
-    }
-  } else {
-    return ['test']
-  }
-}
-export const deleteAccess = () => {
-  Cookies.remove(ACCESS)
-}
-
-export const setMenuProduct = (routerString) => {
-  localStorage.menu_product = routerString
-}
-export const deleteMenuProduct = () => {
-  localStorage.menu_product = []
-}
-export const getMenuProduct = () => {
-  return localStorage.menu_product
-}
-
-export const setUserName = (userName) => {
-  Cookies.set(USER_NAME, userName, {expires: config.cookieExpires || 1})
-}
-
-export const getUserName = () => {
-  const userName = Cookies.get(USER_NAME)
-  if (userName) return userName
-  else return false
-}
 
 export const hasChild = (item) => {
   return item.children && item.children.length !== 0
@@ -137,20 +59,6 @@ export const getBreadCrumbList = (routeMetched) => {
 }
 
 export const showTitle = (item, vm) => vm.$config.useI18n ? ((item.meta && item.meta.title) || vm.$t(item.name)) : ((item.meta && item.meta.title) || item.name)
-
-/**
- * @description 本地存储和获取标签导航列表
- */
-export const setTagNavListInLocalstorage = list => {
-  localStorage.tagNaveList = JSON.stringify(list)
-}
-/**
- * @returns {Array} 其中的每个元素只包含路由原信息中的name, path, meta三项
- */
-export const getTagNavListFromLocalstorage = () => {
-  const list = localStorage.tagNaveList
-  return list ? JSON.parse(list) : []
-}
 
 /**
  * @param {Array} routers 路由列表数组

@@ -11,9 +11,9 @@ import importDirective from '@/directive'
 import 'iview/dist/styles/iview.css'
 import '@/assets/icons/iconfont.css'
 import '@/assets/css/common.less'
-import httpApi from './config/httpApi'
+import httpApi from './libs/httpRequestUtil'
 import dateFormat from 'date-format'
-import {hasBtnPermission} from '@/directive/button-permission'
+import { hasBtnPermission } from '@/directive/button-permission'
 
 // 注册全局属性
 Vue.prototype.axios = httpApi
