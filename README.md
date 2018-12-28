@@ -16,7 +16,8 @@ npm run dev
 
 - 模块已经自带登录页，启动时不需要登录是应为在 router/index.js中
 
-````
+
+```
 // 正在开发应该打开此行注释，获取真实的token
   // const token = getToken()
   const token = 'sdsdsd'
