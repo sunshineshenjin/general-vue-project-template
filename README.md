@@ -21,6 +21,7 @@ npm run dev
   // const token = getToken()
   const token = 'sdsdsd'
 ```
+
 >获取token的代码被注释了，给了默认的token,应打开注释，实现登录接口返回token值
 
 - 替换业务系统的icon，logo，logo在asset文件下
