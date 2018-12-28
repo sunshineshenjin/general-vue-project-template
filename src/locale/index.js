@@ -4,7 +4,6 @@ import customZhCn from './lang/zh-CN'
 import customEnUs from './lang/en-US'
 import zhCnLocale from 'iview/src/locale/lang/zh-CN'
 import enUsLocale from 'iview/src/locale/lang/en-US'
-import zhTwLocale from 'iview/src/locale/lang/zh-TW'
 
 Vue.use(VueI18n)
 

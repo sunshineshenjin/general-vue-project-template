@@ -1,8 +1,7 @@
 # 项目说明：
   - vue 模板项目
   - 用户登录只远程验证了用户名是否存在，密码不校验
-  - 项目结构基于iview-admin-2.0
-  
+    
 # 项目启动步骤：
 # install dependency
 npm install
@@ -12,8 +11,24 @@ npm run dev
 
 # product start
 1. npm run build
-2. npm run start 或 node ./bin/www
-3. http://localhost:9000/
+
+# 新项目启动需要替换的内容
+
+- 模块已经自带登录页，启动时不需要登录是应为在 router/index.js中
+
+````
+// 正在开发应该打开此行注释，获取真实的token
+  // const token = getToken()
+  const token = 'sdsdsd'
+```
+>获取token的代码被注释了，给了默认的token,应打开注释，实现登录接口返回token值
+
+- 替换业务系统的icon，logo，logo在asset文件下
+
+- 修改router下面的路由为真实的业务路由
+
+- 打包发布： 在vue.config.js中有打包的地址配置，dev启动时请求接口是http://loaclhost:8092方便开发调试
+build是使用cdn的地址，这里需要在前端发布系统申请项目
 
 # 重要项目结构说明
 ## 文件结构

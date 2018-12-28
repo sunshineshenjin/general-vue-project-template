@@ -1,6 +1,6 @@
 /* eslint-disable */
 import 'script-loader!file-saver'
-import 'script-loader!@/utils/Blob'
+import 'script-loader!./Blob'
 import XLSX from 'xlsx'
 
 function generateArray(table) {

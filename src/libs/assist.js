@@ -85,7 +85,7 @@ export function getStyle (element, styleName) {
 function firstUpperCase (str) {
   return str.toString()[0].toUpperCase() + str.toString().slice(1)
 }
-export {firstUpperCase}
+export { firstUpperCase }
 
 // Warn
 export function warnProp (component, prop, correctType, wrongType) {
@@ -136,7 +136,7 @@ function deepCopy (data) {
   return o
 }
 
-export {deepCopy}
+export { deepCopy }
 
 // scrollTop animation
 export function scrollTop (el, from = 0, to, duration = 500) {
@@ -187,7 +187,7 @@ function findComponentUpward (context, componentName, componentNames) {
   }
   return parent
 }
-export {findComponentUpward}
+export { findComponentUpward }
 
 // Find component downward
 export function findComponentDownward (context, componentName) {
@@ -436,6 +436,7 @@ export function compareArr (oldArr, newArr) {
   })
   return changeItems
 }
+
 // 根据对象删除数组中的数据的第一个值，返回新数组
 export function delArrObject (arr, delObject) {
   let newArr = []

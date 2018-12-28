@@ -1,5 +1,5 @@
 import directive from './directives'
-import {hasPermission} from './button-permission'
+import { hasPermission } from './button-permission'
 const importDirective = Vue => {
   /**
    * 拖拽指令 v-draggable="options"

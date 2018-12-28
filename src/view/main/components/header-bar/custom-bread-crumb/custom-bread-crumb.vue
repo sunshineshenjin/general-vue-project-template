@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import { showTitle } from '@/utils/assist'
+import { showTitle } from '@/libs/assist'
 import CommonIcon from '_c/common-icon'
 import './custom-bread-crumb.less'
 export default {

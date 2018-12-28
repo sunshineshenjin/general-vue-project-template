@@ -50,7 +50,8 @@ export default [
         name: 'product_list',
         meta: {
           icon: 'md-basketball',
-          notCache: true
+          notCache: true,
+          title: '产品管理'
         },
         component: () => import('@/view/product/product.vue')
       }

@@ -35,7 +35,6 @@
 <script>
 import SideMenu from './components/side-menu'
 import HeaderBar from './components/header-bar'
-import TagsNav from './components/tags-nav'
 import User from './components/user'
 import Fullscreen from './components/fullscreen'
 import Language from './components/language'
@@ -49,7 +48,6 @@ export default {
     SideMenu,
     HeaderBar,
     Language,
-    TagsNav,
     Fullscreen,
     User
   },
@@ -75,7 +73,6 @@ export default {
   methods: {
     ...mapMutations([
       'setBreadCrumb',
-      'addTag',
       'setLocal'
     ]),
     ...mapActions([
@@ -99,7 +96,6 @@ export default {
     /**
      * @description 初始化设置面包屑导航和标签导航
      */
-    this.addTag(this.$store.state.app.homeRoute)
     this.setBreadCrumb(this.$route.matched)
     // 设置初始语言
     this.setLocal(this.$i18n.locale)
