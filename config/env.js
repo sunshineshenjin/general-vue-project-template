@@ -1,3 +1,2 @@
-export const env = 'development'
-export const apiUrl = 'http://localhost:8092/'
-export const baseEnv = 'local'
+const VUE_APP_BASE_ENV = process.env.VUE_APP_BASE_ENV
+export default VUE_APP_BASE_ENV

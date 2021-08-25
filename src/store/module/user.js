@@ -62,10 +62,9 @@ export default {
             }
             commit('setAccess', roles)
             commit('setFlag', 1)
-            commit('setToken', data.data.tokenId)
-            commit('setUserName', data.data.username)
-            setUserName(data.data.username)
-            commit('setUserId', data.data.id)
+            commit('setToken', data.data.token)
+            commit('setUserName', data.data.user.username)
+            setUserName(data.data.user.username)
           }
           commit('setMsg', data.des)
           resolve()

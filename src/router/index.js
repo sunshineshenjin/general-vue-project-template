@@ -1,31 +1,29 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import store from '@/store'
-import iView from 'iview'
-import { getToken, canTurnTo, setGoPath } from '@/libs/util'
-import {filterRoutersByAccess} from '@/libs/routerHelp'
+import iView from 'view-design'
+import { canTurnTo, setGoPath } from '@/libs/util'
+import { getToken } from './../libs/localStorage'
 import CommonRouters from './common-routers'
 Vue.use(Router)
+// 创建一个vue实例
 const router = new Router({
-  routes: CommonRouters
+  routes: CommonRouters,
+  mode: 'history'
 })
-let showRouter = filterRoutersByAccess(CommonRouters)
-router.addRoutes(showRouter)
-router.options.routes = showRouter.concat(router.options.routes)
 
 const LOGIN_PAGE_NAME = 'login'
 router.beforeEach((to, from, next) => {
   iView.LoadingBar.start()
   // 正在开发应该打开此行注释，获取真实的token
-  // const token = getToken()
-  const token = 'sdsdsd'
+  const token = getToken()
+  // const token = 'sdsdsd'
   if (!token && to.name !== LOGIN_PAGE_NAME) {
     // 未登录且要跳转的页面不是登录页
     if (to.meta.public) {
       // 如果是public 页面则直接跳转
       next()
     } else {
-      setGoPath(window.location.href)
       next({
         name: LOGIN_PAGE_NAME // 跳转到登录页
       })

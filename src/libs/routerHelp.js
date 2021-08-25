@@ -1,4 +1,3 @@
-import permissionRouter from '../router/permission-routers'
 import { deepCopyRoutes } from './assist'
 import { getAccess } from '@/libs/localStorage'
 
@@ -22,7 +21,7 @@ export const filterRoutersByAccess = () => {
     return []
   }
   // 一定要使用路由的深复制方法，保留原始路由不被污染
-  let routes = deepCopyRoutes(permissionRouter)
+  let routes = deepCopyRoutes([])
   // 固定路由权限判断
   routes.forEach(route => {
     // 对于无child的路由，判断access,无access视为所有角色共享权限，否则检测权限

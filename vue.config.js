@@ -5,24 +5,18 @@ const resolve = dir => {
   return path.join(__dirname, dir)
 }
 
-const env = process.env.NODE_ENV || 'production'
-const baseEnv = process.env.BASE_ENV || 'develop'
-let daApiUrl = 'http://localhost:8092/'
-let BASE_URL = '/'
-if (baseEnv === 'production') {
-  BASE_URL = 'https://assets.dxycdn.com/gitrepo/da-admin-web/dist'
-  daApiUrl = 'https://da.k8s.uc.host.dxy/'
-} else if (baseEnv === 'develop') {
-  BASE_URL = 'http://assets.dxycdn.com/gitrepo/da-admin-web_dynamic/dist'
-  daApiUrl = 'http://localhost:8092/'
+const VUE_APP_BASE_ENV = process.env.VUE_APP_BASE_ENV
+const baseUrlMap = {
+  dev: '/view/',
+  test: 'xxx',
+  uat: 'xxxxx',
+  prod: 'xxxxxx'
 }
-
-fs.writeFileSync(path.join(__dirname, './config/env.js'), `export const env = '${env}'\n`)
-fs.writeFileSync(path.join(__dirname, './config/env.js'), `export const apiUrl = '${daApiUrl}'\n`, {flag: 'a'})
-fs.writeFileSync(path.join(__dirname, './config/env.js'), `export const baseEnv = '${baseEnv}'\n`, {flag: 'a'})
+console.info(VUE_APP_BASE_ENV)
+const BASE_URL = baseUrlMap[VUE_APP_BASE_ENV]
 
 module.exports = {
-  baseUrl: BASE_URL,
+  publicPath: BASE_URL,
   outputDir: 'dist',
   filenameHashing: true,
   chainWebpack: config => {

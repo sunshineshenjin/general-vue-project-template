@@ -5,7 +5,7 @@
 <template>
   <div class="login" @keydown.enter="handleLogin">
     <div class="login-con">
-      <Card icon="log-in" title="DA 管理平台" :bordered="false">
+      <Card icon="log-in" title="XX 管理平台" :bordered="false">
         <div class="form-con">
           <login-form @on-success-valid="handleSubmit"></login-form>
           <p class="login-tip" >{{message}}</p>
@@ -38,20 +38,14 @@ export default {
     ]),
     handleSubmit ({ userName, password }) {
       this.handleLogin({ userName, password }).then(res => {
-        this.generateDynamicRouter()
-        let userId = this.$store.state.user.userId
-        if (userId === '') {
+        let userName1 = this.$store.state.userName
+        if (userName1 === '') {
           this.message = this.$store.state.user.msg
         } else {
+          this.$router.push({
+            name: 'home'
+          })
         }
-      })
-    },
-    generateDynamicRouter () {
-      let showRouter = filterRoutersByAccess()
-      router.addRoutes(showRouter)
-      router.options.routes = showRouter.concat(router.options.routes)
-      this.$router.push({
-        name: 'home'
       })
     }
   }

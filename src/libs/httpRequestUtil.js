@@ -1,12 +1,12 @@
 import axios from 'axios'
-import baseURL from '_conf/url'
-
+import config from '../../config/index'
+console.info(config)
 axios.defaults.timeout = 500000
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 axios.defaults.params = {}
 
 let http = axios.create({
-  baseURL: baseURL,
+  baseURL: config.apiUrl,
   withCredentials: false,
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
@@ -34,7 +34,7 @@ http.interceptors.request.use(function (config) {
 // 添加响应拦截器
 http.interceptors.response.use(function (response) {
   // 对响应数据做点什么
-  return res
+  return response
 }, function (error) {
   // 对响应错误做点什么
   return Promise.reject(error)

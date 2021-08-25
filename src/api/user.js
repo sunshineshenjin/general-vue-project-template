@@ -5,7 +5,7 @@ export const login = ({ userName, password }) => {
     userName,
     password
   }
-  return httpApi.request('POST', 'user/login', data)
+  return httpApi.request('POST', '/admin/login', data)
 }
 
 export const getUserInfo = (token) => {
@@ -13,5 +13,5 @@ export const getUserInfo = (token) => {
 }
 
 export const logout = (token) => {
-  return httpApi.request('post', 'user/logout')
+  return httpApi.request('post', '/admin/user/logout')
 }

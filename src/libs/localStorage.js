@@ -7,7 +7,6 @@ export const USER_NAME = 'user_name'
 export const ACCESS = 'access'
 
 export const removeAllCookies = () => {
-  clearGoPath()
   Cookies.remove(TOKEN_KEY)
   deleteAccess()
   Cookies.remove(USER_NAME)
