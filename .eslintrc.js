@@ -1,6 +1,9 @@
 module.exports = {
-  root: true,
-  'extends': [
+  root: false,
+  env: {
+    node: true
+  },
+  extends: [
     'plugin:vue/essential',
     '@vue/standard'
   ],

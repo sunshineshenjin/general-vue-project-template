@@ -2,14 +2,15 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import store from '@/store'
 import iView from 'view-design'
-import { canTurnTo, setGoPath } from '@/libs/util'
+import { canTurnTo } from '@/libs/util'
 import { getToken } from './../libs/localStorage'
 import CommonRouters from './common-routers'
 Vue.use(Router)
 // 创建一个vue实例
 const router = new Router({
   routes: CommonRouters,
-  mode: 'history'
+  mode: 'history',
+  base: '/view/'
 })
 
 const LOGIN_PAGE_NAME = 'login'

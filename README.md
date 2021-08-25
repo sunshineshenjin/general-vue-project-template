@@ -1,7 +1,7 @@
 # 项目说明：
   - vue 模板项目
   - 用户登录只远程验证了用户名是否存在，密码不校验
-    
+
 # 项目启动步骤：
 # install dependency
 npm install
@@ -57,4 +57,6 @@ build是使用cdn的地址，这里需要在前端发布系统申请项目
 └── package.json: 依赖包
 └── vue.config.js: 环境/编译配置
 
+Use // eslint-disable-next-line to ignore the next line.
+Use /* eslint-disable */ to ignore all warnings in a file.
 

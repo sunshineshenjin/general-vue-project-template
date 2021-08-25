@@ -9,7 +9,7 @@ export default [
     meta: {
       title: 'Login - 登录',
       hideInMenu: true,
-      public:true
+      public: true
     },
     component: () => import('@/view/login/login.vue')
   },

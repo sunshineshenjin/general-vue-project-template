@@ -36,7 +36,6 @@ import SideMenu from './components/side-menu'
 import HeaderBar from './components/header-bar'
 import User from './components/user'
 import Fullscreen from './components/fullscreen'
-import Language from './components/language'
 import { mapMutations, mapActions } from 'vuex'
 import './main.less'
 export default {
@@ -44,7 +43,6 @@ export default {
   components: {
     SideMenu,
     HeaderBar,
-    Language,
     Fullscreen,
     User
   },

@@ -14,7 +14,7 @@ import mixin from './mixin'
 import itemMixin from './item-mixin'
 export default {
   name: 'CollapsedMenu',
-  mixins: [ mixin, itemMixin ],
+  mixins: [mixin, itemMixin],
   props: {
     hideTitle: {
       type: Boolean,

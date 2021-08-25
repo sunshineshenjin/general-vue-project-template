@@ -38,7 +38,7 @@ export default {
   methods: {
     handleSubmit () {
       let validate = false
-      this.$refs['product'].validate((valid) => {
+      this.$refs.product.validate((valid) => {
         validate = valid
       })
       if (validate) {

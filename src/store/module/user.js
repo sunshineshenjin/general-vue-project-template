@@ -45,7 +45,7 @@ export default {
   },
   actions: {
     // 登录
-    handleLogin ({ commit }, {userName, password}) {
+    handleLogin ({ commit }, { userName, password }) {
       userName = userName.trim()
       return new Promise((resolve, reject) => {
         login({
@@ -54,7 +54,7 @@ export default {
         }).then(res => {
           const data = res.data
           if (data.flag) {
-            let roles = []
+            const roles = []
             if (data.data && data.data.roles) {
               data.data.roles.forEach(item => {
                 roles.push(item.authority)
@@ -93,7 +93,7 @@ export default {
     // 获取用户相关信息
     getUserInfo ({ state, commit }) {
       return new Promise((resolve, reject) => {
-        let userName = getUserName()
+        const userName = getUserName()
         if (userName) {
           commit('setUserName', userName)
         }

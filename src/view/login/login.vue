@@ -18,8 +18,6 @@
 <script>
 import LoginForm from '_c/login-form'
 import { mapActions } from 'vuex'
-import { filterRoutersByAccess } from '@/libs/routerHelp'
-import router from './../../router/index'
 
 export default {
   components: {
@@ -38,7 +36,7 @@ export default {
     ]),
     handleSubmit ({ userName, password }) {
       this.handleLogin({ userName, password }).then(res => {
-        let userName1 = this.$store.state.userName
+        const userName1 = this.$store.state.userName
         if (userName1 === '') {
           this.message = this.$store.state.user.msg
         } else {
